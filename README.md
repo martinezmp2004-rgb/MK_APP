@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Documentación de Investigación
+
+- [Estudio de Mercado: Consumo de Alcohol en España](docs/research/consumo_alcohol_espana.md) — Análisis del consumo de alcohol en España con especial foco en el ron, con datos de Kantar, NielsenIQ, Mintel, Google Trends, EGM, OCU y AECOC.
