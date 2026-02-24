@@ -17,4 +17,17 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Documentación de Investigación
 
-- [Estudio de Mercado: Consumo de Alcohol en España](docs/research/consumo_alcohol_espana.md) — Análisis del consumo de alcohol en España con especial foco en el ron, con datos de Kantar, NielsenIQ, Mintel, Google Trends, EGM, OCU y AECOC.
+- [Estudio de Mercado: Consumo de Alcohol en España (Markdown)](docs/research/consumo_alcohol_espana.md)
+- [Estudio de Mercado: Consumo de Alcohol en España (Word/DOCX)](docs/research/consumo_alcohol_espana.docx)
+- [Estudio de Mercado: Consumo de Alcohol en España (PDF)](docs/research/consumo_alcohol_espana.pdf)
+
+Análisis del consumo de alcohol en España con especial foco en el ron, con datos de Kantar, NielsenIQ, Mintel, Google Trends, EGM, OCU y AECOC.
+
+### Regenerar documentos
+
+Para regenerar los archivos DOCX y PDF a partir del Markdown fuente:
+
+```bash
+pip install python-docx markdown weasyprint
+python scripts/generate_docs.py
+```
