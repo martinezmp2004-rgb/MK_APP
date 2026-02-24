@@ -20,6 +20,8 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
+NUMBERED_LIST_RE = re.compile(r"^(\d+)\.\s+(.+)$")
 RESEARCH_DIR = os.path.join(PROJECT_ROOT, "docs", "research")
 MD_FILE = os.path.join(RESEARCH_DIR, "consumo_alcohol_espana.md")
 DOCX_FILE = os.path.join(RESEARCH_DIR, "consumo_alcohol_espana.docx")
@@ -39,7 +41,7 @@ def parse_table(lines):
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.split("|")[1:-1]]
-        if all(re.match(r"^[-:]+$", c) for c in cells):
+        if not cells or all(re.match(r"^[-:]+$", c) for c in cells):
             continue
         rows.append(cells)
     return rows
@@ -135,7 +137,7 @@ def generate_docx(md_content):
             continue
 
         # Numbered lists
-        match = re.match(r"^(\d+)\.\s+(.+)$", stripped)
+        match = NUMBERED_LIST_RE.match(stripped)
         if match:
             add_rich_paragraph(doc, match.group(2), style="List Number")
             i += 1
